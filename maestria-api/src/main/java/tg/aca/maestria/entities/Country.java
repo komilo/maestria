@@ -6,20 +6,34 @@
 package tg.aca.maestria.entities;
 
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import tg.komilo.kore.entities.BaseEntity;
 
 /**
  *
  * @author abdel.nambiema
  */
+@Entity
+@Table(name = "maestria_countries")
 public class Country extends BaseEntity {
-
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Integer id;
 
+    @Column(name = "phone_code", nullable = false)
     private String phoneCode;
 
+    @Column(name = "label", nullable = false)
     private String label;
 
+    @Column(name = "nationality_label", nullable = false)
     private String nationalityLabel;
 
     public Country() {
