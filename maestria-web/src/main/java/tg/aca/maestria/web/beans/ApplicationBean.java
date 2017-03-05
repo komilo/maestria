@@ -7,6 +7,7 @@ package tg.aca.maestria.web.beans;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import tg.aca.maestria.utils.AppConstants;
 import tg.komilo.kore.web.beans.BaseApplicationBean;
 
 /**
@@ -45,4 +46,7 @@ public class ApplicationBean extends BaseApplicationBean {
         return SECONDARY_MENU_FILE_PATH;
     }
     
+    public boolean canAccessCountries() {
+        return this.userService.isPermitted(AppConstants.PERM_BASEDATA_COUNTRY_LIST);
+    } 
 }
